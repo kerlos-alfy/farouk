@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>مكتب فاروق روفائيل</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/logo.svg" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #091921;
+        }
+        
+        .clock {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-image: url("https://i.postimg.cc/hjVspvcJ/clock.png");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05), inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.3), inset 0 15px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .clock::before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+        
+        .hour,
+        .min,
+        .sec {
+            position: absolute;
+        }
+        
+        .hr {
+            width: 160px;
+            height: 160px;
+        }
+        
+        .mn {
+            width: 190px;
+            height: 190px;
+        }
+        
+        .sc {
+            width: 230px;
+            height: 230px;
+        }
+        
+        .hr,
+        .mn,
+        .sc {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .hr::before {
+            content: "";
+            width: 8px;
+            height: 80px;
+            background-color: #ff105e;
+            z-index: 100;
+            border-radius: 5px;
+        }
+        
+        .mn::before {
+            content: "";
+            width: 6px;
+            height: 90px;
+            background-color: rgb(15, 105, 207);
+            z-index: 11;
+            border-radius: 5px;
+        }
+        
+        .sc::before {
+            content: "";
+            width: 2px;
+            height: 140px;
+            background-color: #fff;
+            z-index: 10;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Just an image -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="assets/img/logo3.svg" width="30" height="30" alt="">
+        </a>
+    </nav>
+    <!-- End Header -->
+    <!-- 
+    <div>
+        <a href="index.html"><img style="width: 300px; display: block;" src="assets/img/logo3.svg" alt="" class="img-fluid"></a>
+
+    </div> -->
+
+    <div class="clock">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div>
+    </div>
+    <script>
+        const deg = 6; //360deg / 60(min||sec) => 6
+        const hr = document.querySelector("#hr");
+        const mn = document.querySelector("#mn");
+        const sc = document.querySelector("#sc");
+
+        setInterval(() => {
+            let day = new Date();
+            let hh = day.getHours() * 30; //360deg / 12 hour => 30
+            let mm = day.getMinutes() * deg;
+            let ss = day.getSeconds() * deg;
+
+            hr.style.transform = `rotateZ(${hh + mm / 12}deg)`;
+            mn.style.transform = `rotateZ(${mm}deg)`;
+            sc.style.transform = `rotateZ(${ss}deg)`;
+        });
+    </script>
+
+    <!-- Vendor JS Files -->
+
+    <script src="assets/vendor/aos/aos.js "></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js "></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js "></script>
+    <script src="assets/vendor/php-email-form/validate.js "></script>
+    <script src="assets/vendor/purecounter/purecounter.js "></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js "></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js "></script>
+
+</body>
+
+</html>
